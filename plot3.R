@@ -1,5 +1,5 @@
 #### Programming Assignment Week 1. Exploratory Data Analysis #############################################
-#1. Create and load new files
+#Set main directory
 
 setwd("C:/Users/Helen/Documents/Coursera/Data Science/IV. Exploratory Data Analysis")
 library(data.table)
@@ -12,9 +12,9 @@ library(lattice)
 if(!file.exists("./explore")){dir.create("./explore")}
 fileURL<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 download.file(fileURL,destfile="./explore/data.zip")
-unzip(zipfile="./explore/data.zip",exdir="./explore") #extraer en esa misma carpeta
+unzip(zipfile="./explore/data.zip",exdir="./explore")
 
-#Load datasets, features, activities, subjects
+#Load dataset
 
 dataT<-read.table("./explore/household_power_consumption.txt", sep = ";", colClasses = "character")
 colnames(dataT)<-dataT[1,]
